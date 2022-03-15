@@ -1,0 +1,17 @@
+﻿@model warp_assessment.Models.User
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <h1 class="display-4">Welcome to home Page</h1>
+    </div>
+    <div class="row justify-content-center">
+        <p class="">Click links below to add new user to the database or to see all users </p>
+    </div>
+    <div class="row justify-content-center">
+        <p><a class="btn btn-primary" asp-controller="Users" asp-action="Create">Add new user</a>
+        <a class="btn btn-success" asp-controller="Users" asp-action="Index">See all users</a></p>
+    </div>
+</div>

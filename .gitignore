@@ -1,0 +1,5 @@
+### Gitignore
+bin/
+.git
+warp-assessment.csproj
+warp-assessment.csproj.user

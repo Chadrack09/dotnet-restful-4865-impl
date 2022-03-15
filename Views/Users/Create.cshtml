@@ -1,0 +1,111 @@
+﻿@model warp_assessment.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                @*<input asp-for="Country" class="form-control" />*@
+                <select asp-for="Country" class="form-control w-100 form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>South Africa</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="France">France</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="USA">USA</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Australia">Australia</option>
+                    <option value="China">China</option>
+                    <option value="India">India</option>
+                </select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FavoriteColour" class="control-label"></label>
+                @*<input asp-for="FavoriteColour" class="form-control" />*@
+
+                <div class="container mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input asp-for="FavoriteColour" class="form-check-input" type="radio" name="color" value="Red" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Red</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input asp-for="FavoriteColour" class="form-check-input" type="radio" name="color" value="Blue" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Blue</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input asp-for="FavoriteColour" class="form-check-input" type="radio" name="color" value="Green" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Green</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span asp-validation-for="FavoriteColour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDay" class="control-label"></label>
+                <input type="date" asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CellPhoneNumber" class="control-label"></label>
+                <input asp-for="CellPhoneNumber" class="form-control" />
+                <span asp-validation-for="CellPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
